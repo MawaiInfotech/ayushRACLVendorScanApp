@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mawai.raclvendorscanapp.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mawai.raclvendorscanapp.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_vendorScanFragment"
+            app:destination="@id/vendorScanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/vendorScanFragment"
+        android:name="com.mawai.raclvendorscanapp.schedule.ScheduleFragment"
+        android:label=""
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_vendorScanFragment_to_tableFormatFragment"
+            app:destination="@id/tableFormatFragment" />
+        <action
+            android:id="@+id/action_vendorScanFragment_to_jobChallanFragment"
+            app:destination="@id/jobChallanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tableFormatFragment"
+        android:name="com.mawai.raclvendorscanapp.schedule.lstbindata.LstBinDataFragment"
+        android:label=""
+        tools:layout="@layout/fragment_lst_bin_data" >
+        <action
+            android:id="@+id/action_tableFormatFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.mawai.raclvendorscanapp.schedule.camerascan.ScanFragment"
+        android:label=""
+        tools:layout="@layout/fragment_scan" />
+
+    <fragment
+        android:id="@+id/jobChallanFragment"
+        android:name="com.mawai.raclvendorscanapp.jobchallan.JobChallanFragment"
+        android:label=""
+        tools:layout="@layout/fragment_job_challan" />
+
+</navigation>
